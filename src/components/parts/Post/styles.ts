@@ -43,11 +43,14 @@ export const ContentBox = styled.div`
   margin-top: 1.5rem;
 `;
 
+export const ContentTitle = styled.strong`
+  margin-top: 1rem;
+`;
 export const ContentText = styled.p`
   margin-top: 1rem;
 `;
 
-export const ComentForm = styled.form`
+export const CommentForm = styled.form`
   width: 100%;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -58,7 +61,7 @@ export const FormTitle = styled.strong`
   line-height: 1.6rem; ;
 `;
 
-export const ComentInput = styled.textarea`
+export const CommentInput = styled.textarea`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   border: 0;
@@ -91,6 +94,6 @@ export const FormButton = styled.button`
   }
 `;
 
-export const ComentList = styled.div`
+export const CommentList = styled.div`
   margin-top: 2rem;
 `;

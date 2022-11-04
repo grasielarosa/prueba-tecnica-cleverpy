@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { Avatar } from "../Avatar";
-import { Comments } from "../../types";
+import { Comments as CommentsType } from "../../../types";
 import {
   Container,
-  ComentBox,
-  ComentContent,
+  CommentBox,
+  CommentContent,
   UserBox,
   InfoBox,
   UserName,
@@ -14,7 +14,7 @@ import {
   Icon,
 } from "./styles";
 
-const Coments: FC<Comments> = ({
+const Comments: FC<CommentsType> = ({
   content,
   userId,
   role,
@@ -33,8 +33,8 @@ const Coments: FC<Comments> = ({
         alt="eso puede ser el imagen de una persona"
       />
 
-      <ComentBox>
-        <ComentContent>
+      <CommentBox>
+        <CommentContent>
           <UserBox>
             <InfoBox>
               <UserName>Grasiela Rosa</UserName>
@@ -50,10 +50,10 @@ const Coments: FC<Comments> = ({
             </DeleteButton>
           </UserBox>
           <Message>{content}</Message>
-        </ComentContent>
-      </ComentBox>
+        </CommentContent>
+      </CommentBox>
     </Container>
   );
 };
 
-export { Coments };
+export { Comments };

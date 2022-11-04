@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Avatar } from "../../Avatar";
+import { Avatar } from "../../parts/Avatar";
 import {
   Aside,
   CoverImage,
@@ -24,7 +24,9 @@ const Sidebar: FC = () => {
         <Title>Developer</Title>
       </ProfileContainer>
       <Footer>
-        <Button>
+        <Button
+          onClick={() => alert("ups! esa funcionalidade no fue implementada.")}
+        >
           <Icon />
           Edite su perfil
         </Button>

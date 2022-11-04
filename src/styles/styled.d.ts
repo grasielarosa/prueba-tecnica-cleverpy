@@ -1,5 +1,5 @@
 import "styled-components";
-import { defaultTheme } from "./src/styles";
+import { defaultTheme } from ".";
 
 type ThemeInterface = typeof defaultTheme;
 

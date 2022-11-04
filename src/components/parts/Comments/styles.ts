@@ -7,12 +7,12 @@ export const Container = styled.div`
   gap: 1rem;
 `;
 
-export const ComentBox = styled.div`
+export const CommentBox = styled.div`
   flex: 1;
   /* background: red; */
 `;
 
-export const ComentContent = styled.div`
+export const CommentContent = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 8px;
   padding: 1rem;

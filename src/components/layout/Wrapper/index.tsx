@@ -1,15 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
 import { getPosts } from "../../../api";
 
-import { Post } from "../../Post";
+import { Post } from "../../parts/Post";
 import { Sidebar } from "../Sidebar";
 import { Container, Grid, Main } from "./styles";
-import { GetPosts } from "../../../types";
+import { Posts } from "../../../types";
 
-interface Posts extends GetPosts {
-  name: string;
-  role: string;
-}
 const Wrapper = () => {
   const [posts, setPosts] = useState<Posts[]>([]);
   useEffect(() => {
@@ -17,6 +13,7 @@ const Wrapper = () => {
       setPosts(response);
     });
   }, []);
+
   return (
     <Grid>
       <Sidebar />
@@ -30,6 +27,9 @@ const Wrapper = () => {
             role={post.role}
             title={post.title}
             id={post.id}
+            setPosts={setPosts}
+            posts={posts}
+            avatar={post.avatar}
           />
         ))}
       </Main>
