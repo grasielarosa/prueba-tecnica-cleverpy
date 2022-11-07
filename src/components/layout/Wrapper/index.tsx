@@ -23,7 +23,7 @@ const Wrapper = () => {
     <Grid>
       <Sidebar />
       <Main>
-        {posts ? (
+        {posts.length > 0 ? (
           posts.map((post) => (
             <Post
               key={post.id.toString()}
