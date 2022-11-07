@@ -9,8 +9,6 @@ export type Posts = GetPosts & {
   name: string;
   role: string;
   avatar: string;
-  setPosts?: (posts: Posts[]) => void;
-  posts?: Posts[];
 };
 
 export type Comments = {
