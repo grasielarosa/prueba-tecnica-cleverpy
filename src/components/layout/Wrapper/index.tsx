@@ -6,24 +6,22 @@ import { Sidebar } from "../Sidebar";
 import { Container, Grid, Main } from "./styles";
 import { Posts } from "../../../types";
 import { useDispatch, useSelector } from "react-redux";
-import { usePosts, renderPosts } from "../../../redux/slice.posts";
+import { addPosts } from "../../../redux/slice.posts";
+import { RootState } from "../../../redux/store";
 
 const Wrapper = () => {
   // const [posts, setPosts] = useState<Posts[]>([]);
-  const posts = useSelector(usePosts);
-  console.log(posts, "XxXXXxxx");
+  const posts = useSelector((state: RootState) => state.render);
   const dispatch = useDispatch();
   useEffect(() => {
-    getPosts().then((response) => {
-      dispatch(renderPosts(response));
-    });
+    getPosts().then((response) => dispatch(addPosts(response)));
   }, []);
 
   return (
     <Grid>
       <Sidebar />
       <Main>
-        {posts.length > 0 ? (
+        {posts ? (
           posts.map((post) => (
             <Post
               key={post.id.toString()}
@@ -33,8 +31,6 @@ const Wrapper = () => {
               role={post.role}
               title={post.title}
               id={post.id}
-              // setPosts={setPosts}
-              posts={posts}
               avatar={post.avatar}
             />
           ))

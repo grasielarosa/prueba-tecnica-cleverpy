@@ -1,7 +1,7 @@
 import React, { FC, useState, FormEvent, ChangeEvent } from "react";
 import { Avatar } from "../Avatar";
 import { Comments } from "../Comments";
-import { Comments as CommentsType, Posts } from "../../../types";
+import { Posts } from "../../../types";
 
 import {
   Container,
@@ -22,19 +22,9 @@ import {
 } from "./styles";
 import { DropdownMenu } from "../DropdownMenu";
 
-const Post: FC<Posts> = ({
-  userId,
-  id,
-  avatar,
-  title,
-  body,
-  name,
-  role,
-  setPosts,
-  posts,
-}) => {
+const Post: FC<Posts> = ({ userId, id, avatar, title, body, name, role }) => {
   const [hasFocus, setHasFocus] = useState(false);
-  const [comments, setComments] = useState(["1"]);
+  const [comments, setComments] = useState<string[]>([]);
   const [newCommentText, setNewCommentText] = useState("");
   const isNewCommentEmpty = newCommentText.length === 0;
 
@@ -56,14 +46,6 @@ const Post: FC<Posts> = ({
     setComments(commentsWithoutDeletedOne);
   };
 
-  const deletePost = (postToDelete: string) => {
-    const postsWithoutDeletedOne = posts?.filter((post) => {
-      return post.id !== Number(postToDelete);
-    });
-
-    setPosts!(postsWithoutDeletedOne!);
-  };
-
   return (
     <Container id={String(id)}>
       <Header>
@@ -78,7 +60,7 @@ const Post: FC<Posts> = ({
         <Time title="27 de octubre" dateTime="2022-10-27 13:47:55">
           Publicado hace 2 días
         </Time>
-        <DropdownMenu postId={String(id)} onDeletePost={deletePost} />
+        <DropdownMenu postId={String(id)} />
       </Header>
       <ContentBox>
         <ContentTitle>{title}</ContentTitle>
