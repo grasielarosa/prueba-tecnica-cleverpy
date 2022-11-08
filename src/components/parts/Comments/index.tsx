@@ -14,15 +14,8 @@ import {
   Icon,
 } from "./styles";
 
-const Comments: FC<CommentsType> = ({
-  content,
-  userId,
-  role,
-  id,
-  onDeleteComment,
-}) => {
+const Comments: FC<CommentsType> = ({ content, id, onDeleteComment }) => {
   const handleDeleteComment = (id: string) => {
-    console.log(id);
     onDeleteComment(id);
   };
 

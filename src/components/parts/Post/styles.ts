@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.article`
   background-color: aliceblue;
@@ -31,11 +31,6 @@ export const UserTitle = styled.span`
   line-height: 1.6;
   font-size: 0.875rem;
   opacity: 0.4;
-`;
-
-export const Time = styled.time`
-  font-size: 0.875rem;
-  opacity: 0.3;
 `;
 
 export const ContentBox = styled.div`

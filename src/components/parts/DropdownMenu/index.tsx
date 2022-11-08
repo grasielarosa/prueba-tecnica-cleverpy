@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import React, { FC } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { addPosts } from "../../../redux/slice.posts";
@@ -14,7 +14,6 @@ const DropdownMenu: FC<Post> = ({ postId }) => {
   const dispatch = useDispatch();
   const handleDeletePost = (postToDelete: string) => {
     const postsWithoutDeletedOne = posts?.filter((post) => {
-      console.log(postToDelete);
       return post.id !== Number(postToDelete);
     });
 
@@ -31,6 +30,7 @@ const DropdownMenu: FC<Post> = ({ postId }) => {
           <Item onSelect={() => handleDeletePost(postId)}>
             ocultar publicación
           </Item>
+
           <Arrow />
         </Content>
       </Portal>

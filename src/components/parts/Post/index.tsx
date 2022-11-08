@@ -2,6 +2,7 @@ import React, { FC, useState, FormEvent, ChangeEvent } from "react";
 import { Avatar } from "../Avatar";
 import { Comments } from "../Comments";
 import { Posts } from "../../../types";
+import { device } from "../../../styles/devicesSizes";
 
 import {
   Container,
@@ -10,7 +11,6 @@ import {
   UserBox,
   UserName,
   UserTitle,
-  Time,
   ContentBox,
   ContentTitle,
   ContentText,
@@ -56,10 +56,6 @@ const Post: FC<Posts> = ({ userId, id, avatar, title, body, name, role }) => {
             <UserTitle>{role} at Cleverpy</UserTitle>
           </UserBox>
         </HeaderBox>
-
-        <Time title="27 de octubre" dateTime="2022-10-27 13:47:55">
-          Publicado hace 2 días
-        </Time>
         <DropdownMenu postId={String(id)} />
       </Header>
       <ContentBox>

@@ -5,9 +5,4 @@ export const defaultTheme = {
     pinkCleverpy: "#E31C79",
     blueCleverpy: "#010032",
   },
-
-  typography: {
-    highlightText: "'Work Sans', sans-serif",
-    plainText: "'Poppins', sans-serif",
-  },
 };

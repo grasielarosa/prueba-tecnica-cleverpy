@@ -75,8 +75,6 @@ input:-webkit-autofill:active {
   transition: all 15000s ease-in-out 0s;
 } 
 
-/* ::-webkit-scrollbar {display:none;} */
-
 
  @media (${device.tablet}) {
     html {

@@ -1,2 +1,2 @@
 export { Post } from "./parts/Post";
-export { Header, Wrapper } from "./layout";
+export { Header, Wrapper, Sidebar } from "./layout";

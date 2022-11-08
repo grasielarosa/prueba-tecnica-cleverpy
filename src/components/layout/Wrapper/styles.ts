@@ -1,9 +1,5 @@
 import styled from "styled-components";
-
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-`;
+import { device } from "../../../styles/devicesSizes";
 
 export const Grid = styled.div`
   max-width: 70rem;
@@ -15,9 +11,7 @@ export const Grid = styled.div`
   gap: 2rem;
   align-items: flex-start;
 
-  @media screen and (max-width: 768px) {
+  @media (${device.tablet}) {
     grid-template-columns: 1fr;
   }
 `;
-
-export const Main = styled.main``;

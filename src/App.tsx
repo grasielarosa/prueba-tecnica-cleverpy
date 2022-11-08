@@ -3,13 +3,11 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme, GlobalStyle } from "./styles";
 
-import { Header, Wrapper } from "./components";
+import { Dashboard } from "./screens";
 const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Header />
-      <Wrapper></Wrapper>
-
+      <Dashboard />
       <GlobalStyle />
     </ThemeProvider>
   );
